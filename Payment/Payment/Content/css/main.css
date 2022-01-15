@@ -1,0 +1,42 @@
+﻿#banner {
+    text-align: center;
+    color: white;
+    background-color: blue;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    font-style: italic;
+}
+
+#imgTitle {
+    text-align: center;
+}
+
+.buttons_added {
+    opacity: 1;
+    display: inline-block;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+h2 {
+    text-align: center;
+    font-size: 50px;
+    font-size: initial;
+}
+
+#btn_Order {
+    color: white;
+    background-color: red;
+    margin-top: 10px;
+}
+
+#btn_back {
+    color: white;
+    background-color: red;
+    margin-top: 10px;
+}

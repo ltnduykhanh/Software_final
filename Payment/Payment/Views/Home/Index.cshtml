@@ -1,0 +1,40 @@
+﻿@model List<Payment.db.Sanpham>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div>
+        <h1>Web order</h1>
+        <div id="imgTitle">
+            <img src="https://thaythuocvietnam.vn/wp-content/uploads/2019/01/nguoi-thieu-mau-nao-nen-kieng-nuoc-ngot-e1549877500485.jpg" alt="Drink">
+
+            <table>
+                <thead>
+                <th id="banner" colspan="3">List Order</th>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr id="drink">
+                           
+                            
+                                <td>
+                                    <p>@item.tensanpham</p>
+                                    <a href="@Url.Action("Index", "Payment", new {maSanpham =  @item.maSanpham})"><img src="https://product.hstatic.net/1000246697/product/8935049500452_c7ed5805bed54ca6adfb4df6654af8aa_2230fd200327478e944428852138b1ec.jpg"></a>
+                                    <p>@item.giatien</p>
+                                </td>
+                            
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
+</html>

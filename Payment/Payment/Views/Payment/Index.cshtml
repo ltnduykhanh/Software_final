@@ -1,0 +1,54 @@
+﻿@model Payment.db.Sanpham
+
+<html>
+<head>
+    <title>Thanh toán</title>
+    <meta charset="utf-8">
+
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+</head>
+<body>
+
+    <form action="Index" method="post">
+        <div>
+
+            <h2>Thanh toán</h2>
+            <table>
+                <thead id="bannerTT">
+               
+               
+                <th>Tên sản phẩm</th>
+                
+              
+                <th>Giá</th>
+                <th>Số lượng</th>
+              
+
+                </thead>
+                <tbody>
+                    <tr id="payment">
+                       
+                     
+                        <td>@Model.tensanpham</td>
+
+                        
+                        <td>@Model.giatien</td>
+
+                        <td>
+                            <div class="buttons_added">
+                                <input aria-label="quantity" class="input-qty" min="0" name="" type="number" value="1">
+                            </div>
+                        </td>
+                        <td></td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" id="btn_Order"><a href="@Url.Action("Index","Bill")">Đặt hàng</a></button>
+
+            <button id="btn_back"><a href="@Url.Action("Index","Home")">Trở lại</a></button>
+        </div>
+
+    </form>
+</body>
+</html>

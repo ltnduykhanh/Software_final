@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DoAnCuoiKiiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="daily">
+    <Key>
+      <PropertyRef Name="maDaily" />
+    </Key>
+    <Property Name="maDaily" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="tenDaily" Type="nvarchar" MaxLength="25" />
+    <Property Name="diachi" Type="varchar" MaxLength="50" />
+    <Property Name="dienthoai" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Donhang">
+    <Key>
+      <PropertyRef Name="maDonhang" />
+    </Key>
+    <Property Name="maDonhang" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="tensanpham" Type="nvarchar" MaxLength="20" />
+    <Property Name="tenDaily" Type="nvarchar" MaxLength="20" />
+    <Property Name="gia" Type="float" />
+    <Property Name="soluong" Type="int" />
+  </EntityType>
+  <EntityType Name="KeToan">
+    <Key>
+      <PropertyRef Name="maID" />
+    </Key>
+    <Property Name="maID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Tenketoan" Type="nvarchar" MaxLength="30" />
+    <Property Name="Diachi" Type="nvarchar" MaxLength="50" />
+    <Property Name="sodienthoai" Type="int" />
+  </EntityType>
+  <EntityType Name="Phieunhapkho">
+    <Key>
+      <PropertyRef Name="maPhieu" />
+    </Key>
+    <Property Name="maPhieu" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ngaynhap" Type="date" />
+    <Property Name="maSanpham" Type="nvarchar" MaxLength="20" />
+    <Property Name="soluong" Type="int" />
+    <Property Name="maID" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Phieuxuatkho">
+    <Key>
+      <PropertyRef Name="maPhieuxuat" />
+    </Key>
+    <Property Name="maPhieuxuat" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ngayxuat" Type="date" />
+    <Property Name="giaca" Type="float" />
+    <Property Name="soluong" Type="int" />
+    <Property Name="maDonhang" Type="nvarchar" MaxLength="25" />
+    <Property Name="maID" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Sanpham">
+    <Key>
+      <PropertyRef Name="maSanpham" />
+    </Key>
+    <Property Name="maSanpham" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="theloai" Type="nvarchar" MaxLength="50" />
+    <Property Name="giatien" Type="float" />
+    <Property Name="tensanpham" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK__Donhang__maDaily__74AE54BC">
+    <End Role="daily" Type="Self.daily" Multiplicity="0..1" />
+    <End Role="Donhang" Type="Self.Donhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="daily">
+        <PropertyRef Name="maDaily" />
+      </Principal>
+      <Dependent Role="Donhang">
+        <PropertyRef Name="tensanpham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DoAnCuoiKiiModelStoreContainer">
+    <EntitySet Name="daily" EntityType="Self.daily" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Donhang" EntityType="Self.Donhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KeToan" EntityType="Self.KeToan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Phieunhapkho" EntityType="Self.Phieunhapkho" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Phieuxuatkho" EntityType="Self.Phieuxuatkho" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sanpham" EntityType="Self.Sanpham" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Donhang__maDaily__74AE54BC" Association="Self.FK__Donhang__maDaily__74AE54BC">
+      <End Role="daily" EntitySet="daily" />
+      <End Role="Donhang" EntitySet="Donhang" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

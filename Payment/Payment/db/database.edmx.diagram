@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0b145f3b33ad49d483ee3243b3582a7a" Name="Diagram1">
+        <EntityTypeShape EntityType="DoAnCuoiKiiModel.KeToan" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnCuoiKiiModel.Phieunhapkho" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnCuoiKiiModel.Phieuxuatkho" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnCuoiKiiModel.Sanpham" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DoAnCuoiKiiModel.daily" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="DoAnCuoiKiiModel.Donhang" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="DoAnCuoiKiiModel.FK__Donhang__maDaily__74AE54BC" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

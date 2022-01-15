@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DoAnCuoiKiiModelStoreContainer" CdmEntityContainer="DoAnCuoiKiiEntities">
+    <EntitySetMapping Name="dailies">
+      <EntityTypeMapping TypeName="DoAnCuoiKiiModel.daily">
+        <MappingFragment StoreEntitySet="daily">
+          <ScalarProperty Name="maDaily" ColumnName="maDaily" />
+          <ScalarProperty Name="tenDaily" ColumnName="tenDaily" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donhangs">
+      <EntityTypeMapping TypeName="DoAnCuoiKiiModel.Donhang">
+        <MappingFragment StoreEntitySet="Donhang">
+          <ScalarProperty Name="maDonhang" ColumnName="maDonhang" />
+          <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+          <ScalarProperty Name="maDaily" ColumnName="maDaily" />
+          <ScalarProperty Name="giaDon" ColumnName="giaDon" />
+          <ScalarProperty Name="hinhthucthanhtoan" ColumnName="hinhthucthanhtoan" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KeToans">
+      <EntityTypeMapping TypeName="DoAnCuoiKiiModel.KeToan">
+        <MappingFragment StoreEntitySet="KeToan">
+          <ScalarProperty Name="maID" ColumnName="maID" />
+          <ScalarProperty Name="Tenketoan" ColumnName="Tenketoan" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="sodienthoai" ColumnName="sodienthoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phieunhapkhoes">
+      <EntityTypeMapping TypeName="DoAnCuoiKiiModel.Phieunhapkho">
+        <MappingFragment StoreEntitySet="Phieunhapkho">
+          <ScalarProperty Name="maPhieu" ColumnName="maPhieu" />
+          <ScalarProperty Name="ngaynhap" ColumnName="ngaynhap" />
+          <ScalarProperty Name="maSanpham" ColumnName="maSanpham" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="maID" ColumnName="maID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phieuxuatkhoes">
+      <EntityTypeMapping TypeName="DoAnCuoiKiiModel.Phieuxuatkho">
+        <MappingFragment StoreEntitySet="Phieuxuatkho">
+          <ScalarProperty Name="maPhieuxuat" ColumnName="maPhieuxuat" />
+          <ScalarProperty Name="ngayxuat" ColumnName="ngayxuat" />
+          <ScalarProperty Name="giaca" ColumnName="giaca" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="maDonhang" ColumnName="maDonhang" />
+          <ScalarProperty Name="maID" ColumnName="maID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sanphams">
+      <EntityTypeMapping TypeName="DoAnCuoiKiiModel.Sanpham">
+        <MappingFragment StoreEntitySet="Sanpham">
+          <ScalarProperty Name="maSanpham" ColumnName="maSanpham" />
+          <ScalarProperty Name="theloai" ColumnName="theloai" />
+          <ScalarProperty Name="giatien" ColumnName="giatien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

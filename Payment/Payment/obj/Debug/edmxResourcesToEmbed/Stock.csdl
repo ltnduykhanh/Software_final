@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DoAnCuoiKiiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="daily">
+    <Key>
+      <PropertyRef Name="maDaily" />
+    </Key>
+    <Property Name="maDaily" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tenDaily" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dienthoai" Type="Int32" />
+    <NavigationProperty Name="Donhangs" Relationship="Self.FK__Donhang__maDaily__74AE54BC" FromRole="daily" ToRole="Donhang" />
+  </EntityType>
+  <EntityType Name="Donhang">
+    <Key>
+      <PropertyRef Name="maDonhang" />
+    </Key>
+    <Property Name="maDonhang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ngaydathang" Type="DateTime" Precision="0" />
+    <Property Name="maDaily" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="giaDon" Type="Int32" />
+    <Property Name="hinhthucthanhtoan" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="trangthai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="daily" Relationship="Self.FK__Donhang__maDaily__74AE54BC" FromRole="Donhang" ToRole="daily" />
+  </EntityType>
+  <EntityType Name="KeToan">
+    <Key>
+      <PropertyRef Name="maID" />
+    </Key>
+    <Property Name="maID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tenketoan" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sodienthoai" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Phieunhapkho">
+    <Key>
+      <PropertyRef Name="maPhieu" />
+    </Key>
+    <Property Name="maPhieu" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ngaynhap" Type="DateTime" Precision="0" />
+    <Property Name="maSanpham" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="soluong" Type="Int32" />
+    <Property Name="maID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Phieuxuatkho">
+    <Key>
+      <PropertyRef Name="maPhieuxuat" />
+    </Key>
+    <Property Name="maPhieuxuat" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ngayxuat" Type="DateTime" Precision="0" />
+    <Property Name="giaca" Type="Double" />
+    <Property Name="soluong" Type="Int32" />
+    <Property Name="maDonhang" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="maID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sanpham">
+    <Key>
+      <PropertyRef Name="maSanpham" />
+    </Key>
+    <Property Name="maSanpham" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="theloai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="giatien" Type="Double" />
+  </EntityType>
+  <Association Name="FK__Donhang__maDaily__74AE54BC">
+    <End Role="daily" Type="Self.daily" Multiplicity="0..1" />
+    <End Role="Donhang" Type="Self.Donhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="daily">
+        <PropertyRef Name="maDaily" />
+      </Principal>
+      <Dependent Role="Donhang">
+        <PropertyRef Name="maDaily" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DoAnCuoiKiiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="dailies" EntityType="Self.daily" />
+    <EntitySet Name="Donhangs" EntityType="Self.Donhang" />
+    <EntitySet Name="KeToans" EntityType="Self.KeToan" />
+    <EntitySet Name="Phieunhapkhoes" EntityType="Self.Phieunhapkho" />
+    <EntitySet Name="Phieuxuatkhoes" EntityType="Self.Phieuxuatkho" />
+    <EntitySet Name="Sanphams" EntityType="Self.Sanpham" />
+    <AssociationSet Name="FK__Donhang__maDaily__74AE54BC" Association="Self.FK__Donhang__maDaily__74AE54BC">
+      <End Role="daily" EntitySet="dailies" />
+      <End Role="Donhang" EntitySet="Donhangs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
